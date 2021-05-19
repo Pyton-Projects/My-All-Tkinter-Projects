@@ -23,7 +23,7 @@ def notification_():
             	title = "Your Remainder!",
             	message=F"""{task_value_}Do You Know? 
 {random.choice(facts)} Thats a Fact!""")
-		frequency = 1000
+		frequency = 2000
 		duration = 2000 
 		winsound.Beep(frequency, duration)
 	except Exception:
@@ -31,14 +31,13 @@ def notification_():
 def timer():
 	if len(task.get("1.0", "end-1c")) ==0:
 		messagebox.showinfo('Message','Please Set A Task Then Cilck On Set Task Button')
-	
-	if len(task.get("1.0", "end-1c")) !=0:	
+	else:
+		messagebox.showinfo('Message','Timer Set Suceesfully!')	
 		formula_to_find_seconds=sec_value.get()*1000
 		formula_to_find_minutes=min_value.get()*60000
 		formula_to_find_hours=hour_value.get()*3600000
 		time=formula_to_find_seconds+formula_to_find_minutes+formula_to_find_hours
 		root.after(time,notification_)
-		messagebox.showinfo('Message','Timer Set Suceesfully!')
 def task_value():
 	global task_value_
 	task_value_=task.get(1.0,END)
@@ -54,7 +53,7 @@ root.minsize(900,400)
 min_value=IntVar()
 sec_value=IntVar()
 hour_value=IntVar()
-line.pack()
+
 task=Text(root,width=15,height=5)
 task.place(x=365,y=250)
 root.title('Remainder Application For Windows')
@@ -82,3 +81,10 @@ set_.place(x=385,y=180)
 set_task=ttk.Button(root,text='Set Task',command=task_value)
 set_task.place(x=385,y=340,)
 root.mainloop()
+# set task to do project
+# a software that can get the rgb color value form a int
+# WHY SUMBLIME TEXT SHORCUT RuN SHORCUT IS Ctrl+B?
+# answer-->Ctrl+c copy code from stackoverflow # ctrl+v paste it to text editor then press ctrl+b to execute it...!
+# notifaction type
+# set task to do progject
+# a software that can get the color value form a int
