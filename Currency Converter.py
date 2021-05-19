@@ -36,14 +36,16 @@ def conversion():
 	except Exception:
 		messagebox.showinfo('Info','Please Enter A Number!')
 	try:
+
 		Va=converter_.convert(error_handling,working_codes_from,working_codes_to)
-		amount=Amount_.set(Va)
-		messagebox.showinfo('Info',f'Converted Value Is {Va}')
+		four_value=format(Va,'.4f')
+		amount=Amount_.set(four_value)
+		messagebox.showinfo('Info',f'Converted Value Is {four_value}')
 	except UnboundLocalError:
 		''
 from_indiacator=ttk.Label(root,text='From')
 from_indiacator.place(x=1,y=40)
-Label_=ttk.Label(root,text='Enter Amount Down Below',font=('Courier',10))
+Label_=ttk.Label(root,text='Enter Amount Down Below To Convert',font=('Courier',8))
 Label_.place(x=1,y=70)
 input_=Entry(root,width=20,textvariable=Amount_value)
 input_.place(x=1,y=100)
