@@ -1,4 +1,4 @@
-# Le'ts  Start
+# Start
 # -----------------------------------------------------------------------
 from tkinter import*
 from tkinter import filedialog
@@ -10,7 +10,7 @@ root=Tk()
 filters=('Blur','Smooth','Detail','Sharpen')
 root.geometry('800x200')
 root.maxsize(800,200)
-root.minsize(800,200)# get only path remove name
+root.minsize(800,200)
 root.title('Image Compresser')
 opend_file_path=Label(root,text=None)
 saved_file_path=Label(root,text=None,fg='purple1')
@@ -41,7 +41,7 @@ def compress():
 	try:
 		img=PIL.Image.open(f'{filename.name}')
 		my_1,my_2=img.size
-		img=img.resize((my_1,my_2),PIL.Image.ANTIALIAS)#pil compressing constansts to do project
+		img=img.resize((my_1,my_2),PIL.Image.ANTIALIAS)
 		save_=filedialog.asksaveasfilename()
 		print(int_.get())
 		img.save(save_+'.jpg',optimize=True,quality=int_.get())
@@ -59,7 +59,7 @@ def open_file_name():
         compression_button.config(command='')
         opend_file_path.config(text='')
         import tkinter.messagebox
-        tkinter.messagebox.showwarning('info','File Not Imported!')#ask a style to save as# save as animation style high quality meduim quality low quality
+        tkinter.messagebox.showwarning('info','File Not Imported!')
     if filename!=None:
         compression_button.config(command=compress)
         opend_file_path.config(text=f'''Opened File Path- {filename.name}''')
