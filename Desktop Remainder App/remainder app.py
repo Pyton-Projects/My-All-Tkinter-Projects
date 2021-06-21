@@ -34,9 +34,7 @@ def which_alert():
 def ask_phone_number():
 	global phone_number
 	phone_number=simpledialog.askstring(title='Phone Number',prompt='Enter Your Phone Number (With Contury Code Incuded)')
-	if phone_number==None:
-		messagebox.showinfo('Info','Please Enter A Number!')
-		pro_1.stop()
+	
 def sms_alert():
 	
 	pro_1.stop()
