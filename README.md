@@ -1,2 +1,1 @@
-# My-All-Tkinter-Projects
-# Desktop Remainder Project In Devlopment Stage
+When i was 12 i create all these project in this repo.
