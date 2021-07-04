@@ -1,6 +1,3 @@
-
-# logic:
-
 from datetime import date,datetime
 from tkinter import*
 from tkinter import messagebox
@@ -83,7 +80,7 @@ def calculate():
 		birt_4=(str(Calculate)[5:7:])
 		bith89797979=(str(birth_date)[8:])
 		bith8979=(str(Calculate)[8:])
-		messagebox.showinfo("info",f'{int(brit_1)-int(brit)} Year {int(birt_2)-int(birt_4)} Months {int(bith89797979)-int(bith8979)} Days.')# fix acurracy issue.
+		messagebox.showinfo("info",f'{int(brit_1)-int(brit)} Year {int(birt_2)-int(birt_4)} Months {int(bith8979)-int(bith89797979)} Days.')# fix acurracy issue.
 	except ValueError:
 		messagebox.showerror('Info','Please Enter A Vaild Year Or Month!!!')
 month_combobox=Combobox(root,values=months,textvariable=track_month_combobox_value,width=7,state='readonly')
