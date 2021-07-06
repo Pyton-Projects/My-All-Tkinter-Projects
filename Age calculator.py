@@ -72,15 +72,26 @@ def calculate():
 		global from_month
 		int_from=int(input_data.get())
 		int_from_1=int(input_data1.get())
-		birth_date=(date(int_from,track_month_combobox_value_1.get(),int(track_day_combobox_value_1.get())))
-		Calculate=(date(int_from_1,track_month_combobox_value.get(),int(track_day_combobox_value.get())))
-		brit=(str(birth_date)[0:4:])
-		brit_1=(str(Calculate)[0:4:])
-		birt_2=(str(birth_date)[5:7:])
-		birt_4=(str(Calculate)[5:7:])
-		bith89797979=(str(birth_date)[8:])
-		bith8979=(str(Calculate)[8:])
-		messagebox.showinfo("info",f'{int(brit_1)-int(brit)} Year {int(birt_2)-int(birt_4)} Months {int(bith8979)-int(bith89797979)} Days.')# fix acurracy issue.
+		today=date(int_from,track_month_combobox_value.get(),track_day_combobox_value.get())
+		calculate=date(int_from_1,track_month_combobox_value_1.get(),track_day_combobox_value_1.get())
+		birth_date=today.day
+		calculate_date=calculate.day
+		birth_month=today.month
+		calculate_month=calculate.month
+		birth_year=today.year
+		calculate_year=calculate.year
+		if calculate_date<birth_date:
+			calculated_age_in_days=(calculate_date+31-birth_date)
+			calculate_month-=1
+		else:
+			calculated_age_in_days=calculate_date-birth_date
+			
+		if calculate_month<birth_month:
+			calculated_age_in_m=calculate_month-birth_month+12
+			calculate_year-=1
+		else:
+			calculated_age_in_m=(calculate_month-birth_month)
+		messagebox.showinfo('Info',f'Your Age Is: {calculate_year-birth_year} Years {calculated_age_in_m} Months {calculated_age_in_days} Days.')
 	except ValueError:
 		messagebox.showerror('Info','Please Enter A Vaild Year Or Month!!!')
 month_combobox=Combobox(root,values=months,textvariable=track_month_combobox_value,width=7,state='readonly')
