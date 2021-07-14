@@ -83,7 +83,7 @@ def calculate():
 		months=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 		if calculate_date<birth_date:
 
-			calculated_age_in_days=(calculate_date+months[birth_month-1]-birth_date)
+			calculated_age_in_days=(calculate_date+months[birth_month]-birth_date)
 			calculate_month-=1
 		else:
 			calculated_age_in_days=calculate_date-birth_date
