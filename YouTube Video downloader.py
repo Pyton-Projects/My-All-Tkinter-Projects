@@ -1,4 +1,3 @@
-
 from  tkinter import*
 from tkinter import messagebox
 import pafy
@@ -35,8 +34,8 @@ def call(total, recvd, ratio, rate, eta):
         pass
 times_called=0
 def down_Video():
-    url=input_entry.get()
     try:
+        url=input_entry.get()
         dir=filedialog.askdirectory()
         os.chdir(str(dir))
         p = pafy.new(url)
@@ -44,8 +43,10 @@ def down_Video():
         ba = p.getbest()
         filename = ba.download(quiet=True, callback=call)
         start['state']=ACTIVE
-        messagebox.showinfo('Info',f'{p.title} Video Downloaded At {dir}.')
+        leree.config(text=f'')
+        messagebox.showinfo('Info',F'{p.title} Video Downloaded At {dir}')
         input_entry.delete(0,END)
+        leree['text']=''
     except ValueError:
         start['state']=ACTIVE
         messagebox.showinfo('Info','Please Enter A Valid Url!! Or Check The Net Work Connection.')
@@ -61,6 +62,7 @@ def audio():
         start['state']=ACTIVE
         messagebox.showinfo('Info',f'{p.title} Audio Downloaded At {dir}')
         input_entry.delete(0,END)
+        leree['text']=''
     except ValueError:
         start['state']=ACTIVE
         messagebox.showinfo('Info','Please Enter A Valid Url!! Or Check The Net Work Connection.')
