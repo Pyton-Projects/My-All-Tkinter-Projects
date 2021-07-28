@@ -75,7 +75,8 @@ def set_Scissors():
             comp_point_data.set(f'Comp Score: {computer_point}')
             vs_label.config(text='<')
    if USER_choice.get()=='Scissors' and random_thing=='Scissors':
-            vs_label.config(text='=')   
+            vs_label.config(text='=') 
+            why_you_lose0.config(text='')  
    if random_thing=='Paper':
       paper_lab_1.place(y=350,x=450)
       rOcK_lab_1.place(x=5444)
@@ -193,7 +194,8 @@ def set_rocks():
             rOcK_lab.place(y=350,x=75)
    if USER_choice.get()=='Rock' and random_thing=='Rock':
             vs_label.config(text='=')   
-            rOcK_lab.place(y=350,x=75)       
+            rOcK_lab.place(y=350,x=75)
+            why_you_lose0.config(text='')       
    if random_thing=='Paper':
       paper_lab_1.place(y=350,x=450)
       rOcK_lab_1.place(x=5444)
@@ -214,26 +216,5 @@ button_0.place(x=275,y=140)
 button_1=Button(root,text='Scissors',fg='White',bg='black',activebackground='Black',activeforeground='white',font=('Arial Rounded Mt Bold',20,'bold'),command=set_Scissors,borderwidth=6)
 button_1.place(x=265,y=230)
 mainloop()
-# heading=Label(root,text='Select Your Choice From Down Below')
-# heading.pack()
-# Rock=Radiobutton(root,text='Rock',value='Rock',var=USER_choice)
-# Rock.pack()
-# Paper=Radiobutton(root,text='Paper',value='Paper',var=USER_choice)
-# Paper.pack()
-# Scissors=Radiobutton(root,text='Scissors',value='Scissors',var=USER_choice)
-# Scissors.pack()
-# button=Button(root,text='Select!',command=result)
-# button.pack()
-# ChoiceS_Label.pack()
-# label.pack()
-# vs=Label(root,text='VS',font=('Arial Rounded MT Bold',45,'bold'))
-# vs.place(x=250,y=250)
-# player=Label(root,text='You',font=('Arial Rounded MT Bold',45,'bold'))
-# player.place(x=375,y=125)
-# Computer=Label(root,text='Computer',font=('Arial Rounded MT Bold',45,'bold')).place(x=1,y=115)
-# mainloop()
 # copy paste bot unit converter enachne rock paper scissors game bas!
 # software that can detect sound,a softawre that can get color value from a int
-# enachen rock paper siccors!
-# unit converter!!
-# remove calling support in remindeder app.
