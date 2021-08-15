@@ -33,3 +33,4 @@ flag_label.place(x=1)
 wishing_label.place(x=1,y=550)
 threading.Thread(target=animation).start()
 mainloop()
+##########
